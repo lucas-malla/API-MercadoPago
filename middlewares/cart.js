@@ -1,4 +1,9 @@
 module.exports =(req,res,next) => {
-    // Step 1
+    if (req.session.cart && !req.session.cart) {
+        req.session.cart = []
+    }
+
+        req.locals.cart = req.session.cart
+
     next();
 };
