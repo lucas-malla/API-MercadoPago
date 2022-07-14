@@ -9,11 +9,12 @@
             <% }) %>
         <% } %>
     </ul>
-
-    <!--
-    <ul>
-        // Step 4
-    </ul>
-    -->
+    <% if (cart.length > 0 ) { %> 
+        <ul id="cart">
+            <% cart.forEach( item => { %>
+                <%- include ('./partials/item.ejs',item) %>  
+            <% }) %> 
+        </ul>    
+    <% } %> 
 </body>
 </html>
