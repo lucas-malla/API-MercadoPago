@@ -2,8 +2,8 @@
     <h2><%= name %> <span class="price">$<%= price * quantity %></span></h2>
     <form action="/cart/update" method="post" class="update">
         <input type="hidden" name="id" value="<%= id %>" />
-        <input type="number" name="quantity" value="<%= quantity %> " id="quantity">
-        <button type="submit">
+        <input type="number" name="quantity" value="<%= quantity %>" id="quantity">
+        <button type="submit"> 
             <i class="fa-solid fa-sync"></i>
         </button>
     </form>

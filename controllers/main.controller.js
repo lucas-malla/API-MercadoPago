@@ -5,15 +5,14 @@ module.exports ={
         products:index(),
         styles:['home']
     }),
-    // Step 3
     addCart: (req,res) => {
         // Find Product in DB
            let product = one(req.body.id); 
         // Check product exist in cart
-        if(req.session.cart.find( item => item.id == product.id)){
+        if(req.session.cart.find(item => item.id == product.id)){
+        //Exist and update quantity
             req.session.cart = req.session.cart.map(item => {
-                //Exist and update quantity
-                if(item.id = product.id){
+                if(item.id == product.id){
                     item.quantity = item.quantity + 1
                 }
                 return item
@@ -24,15 +23,25 @@ module.exports ={
         }
         return res.redirect('/');
     },
-    // Step 5
     updateCart: (req,res) => {
         // Check quantity
-        // Case 1: Is equal to zero then remove product
-        // Case 2: Update all cart items setting quantity in product selected
-        return res.send("Update quantity")
+        if(req.body.quantity == 0 ){
+            // Is equal to zero then remove product
+            req.session.cart = req.session.cart.filter(item => item.id != req.body.id)
+        }else{
+            req.session.cart = req.session.cart.map(item => {
+                if(item.id == req.body.id){
+                    item.quantity = req.body.quantity
+                }
+                // Update all cart items setting quantity in product selected
+                return item
+            })
+
+        }
+        return res.redirect("/")
     }, 
-    // Step 6
-    removeCart: (req,res) =>{
-        return res.send("Remove a product from the cart")
+    removeCart: (req,res) => {
+        req.session.cart = req.session.cart.filter(item => item.id != req.body.id)
+        return res.redirect("/")
     }
 }
