@@ -1,7 +1,7 @@
 body{
     display: flex;
     flex-wrap: wrap;
-    background: #808080;
+    background: #FFC837;
     font-family: 'Roboto', sans-serif;
     justify-content: space-between;
     padding: 1rem;
@@ -25,7 +25,7 @@ body{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    background: rgb(240, 240, 240);
+    background-color: #9333ea;
     padding: .25rem;
 }
 #products li picture{
@@ -66,7 +66,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: slateblue;
+    background-color:#16a34a;
     color: snow;
 }
 #cart{
@@ -91,7 +91,7 @@ body{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    background: rgb(240, 240, 240);
+    background-color: #9333ea;
     padding: .25rem;
     height: 25vh;
 }
@@ -138,5 +138,16 @@ body{
 }
 .delete button{
     background: crimson;
+    color: snow;
+}
+
+.checkout{
+    padding-left: 40%;
+}
+.checkout button {
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    background: #16a34a;
     color: snow;
 }

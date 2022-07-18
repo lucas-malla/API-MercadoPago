@@ -14,6 +14,9 @@
             <% cart.forEach(item => { %>
                 <%- include ('./partials/item.ejs',item) %>  
             <% }) %> 
+            <form class="checkout" action="/checkout/process" method="post">
+               <button type="submit">checkout</button>
+            </form>
         </ul>    
     <% } %> 
 </body>
